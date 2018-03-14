@@ -1,0 +1,26 @@
+genrule(
+    name = "libcpp_static",
+    srcs = [
+        "//tools/defaults:crosstool",
+    ],
+    outs = [
+        "files.txt",
+    ],
+    cmd = """\
+find external/androidndk/ndk/sources/cxx-stl/llvm-libc++/libs/ > $(@)
+    """
+)
+
+genrule(
+    name = "libcpp_static_list_files",
+    srcs = [
+        "//tools/defaults:crosstool",
+        "@bazel_tools//tools/cpp:current_cc_toolchain",
+    ],
+    outs = [
+        "files2.txt",
+    ],
+    cmd = """\
+find external/androidndk/ndk/sources/cxx-stl/
+    """
+)

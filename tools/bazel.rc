@@ -1,0 +1,4 @@
+build --verbose_failures
+build --crosstool_top=@androidndk//:toolchain-libcpp
+build --host_crosstool_top=@bazel_tools//tools/cpp:toolchain
+build --cpu=x86_64
